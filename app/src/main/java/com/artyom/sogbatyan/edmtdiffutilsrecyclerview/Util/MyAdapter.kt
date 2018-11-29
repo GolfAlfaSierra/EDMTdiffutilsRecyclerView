@@ -22,10 +22,15 @@ class MyAdapter(private val dataSource: MutableList<String>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.textView.text = dataSource.get(position)
+        holder.mcounter.text = (position+1).toString()
+
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         internal var textView: TextView = itemView.findViewById(R.id.txt_text) as TextView
+        internal var mcounter: TextView = itemView.findViewById(R.id.mcounter) as TextView
+
+
 
     }
 

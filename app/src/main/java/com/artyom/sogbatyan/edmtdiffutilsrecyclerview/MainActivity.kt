@@ -10,11 +10,15 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
+
+
     internal var dataSource: MutableList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         recycler_view.setHasFixedSize(true)
         recycler_view.layoutManager = (LinearLayoutManager(this))
@@ -38,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
             for (i in 0..2)
                 newData.add(UUID.randomUUID().toString())
-            adapter.insertItem(newData)
+            adapter.updateItem(newData)
         }
     }
 
